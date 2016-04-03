@@ -21,7 +21,7 @@ module Delayed
           #puts "[init] Delayed::Backend::Sqs"
           @msg = nil
 
-          if data.is_a?(AWS::SQS::ReceivedMessage)
+          if data.is_a?(Aws::SQS::ReceivedMessage)
             @msg = data
             data = JSON.load(data.body)
           end
